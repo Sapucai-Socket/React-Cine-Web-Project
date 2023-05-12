@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&display=swap');
+
+.body-profile {
+  font-family: 'Istok Web', sans-serif;
+}
+#nomeUsuario {
+  font-family: 'Istok Web', sans-serif;
+  font-weight: bolder;
+  color:white;
+}
+#descUsuario {
+  font-family: 'Istok Web', sans-serif;
+  color:white;
+}
+#pfp {
+  width:128px;
+  height:128px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.pfpImage {
+  margin-right:50px;
+  margin-bottom:25px;
+}
+
+.container-perfil {
+ display: flex;
+ align-items: center;
+ justify-content: center
+}
+
+
+
+
+.otherUserInfos {
+  color:white;
+  font-family: Arial, sans-serif;
+  text-align:center;
+  justify-content:center;
+  display: flex;
+}
+
+.btnEditarPerfil {
+  color:white;
+  padding:7px;
+  background-color:gray;
+  margin-left:50px;
+  border:none;
+  font-weight:bold;
+  border-radius:20px;
+}
+
+input[type="text"] {
+  background-color: #0d0d0d; /* dark gray background color */
+  color:white;
+  border: none; /* remove default border */
+  border-bottom: 1px solid #FFFFFF; /* thin white border only on the bottom */
+  font-size:large;
+
+}
+
+.otherUserInfo {
+  padding-right:15px;
+  padding-left:15px;
+}
+
+
+
+.quantity {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.vertical-line {
+  width: 1px;
+  margin-top:10px;
+  margin-bottom:10px;
+  background-color: white; 
+} 
+.posterUserFavorites {
+  display: flex;
+}
+.flex-child {
+  position: relative;
+  margin-right: 20px;
+} 
+.minus-button {
+  position: absolute; /* set position to absolute so we can position the button inside the image container */
+  top: 50%; /* position the top of the button at the center of the image container */
+  left: 50%; /* position the left of the button at the center of the image container */
+  transform: translate(-50%, -50%); /* center the button vertically and horizontally */
+  display: flex; /* enable flexbox layout */
+  justify-content: center; /* center content horizontally */
+  align-items: center; /* center content vertically */
+  width: 40px; /* set width of the button */
+  height: 40px; /* set height of the button */
+  background-color:rgba(204, 204, 204, 0.5); /* set gray background color */
+  border:none;
+  border-radius: 50%; /* set rounded edges */
+  color: #ffffff; /* set text color to white */
+  font-size: 24px; /* set font size */
+  text-decoration: none; /* remove underline from text */
+  text-align: center; /* center text */
+  line-height: 1; /* set line height to 1 to center text vertically */
+}
+.add-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color:rgba(204, 204, 204, 0.5);
+  border:none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1;
+}
+#favoritos{
+  color:white;
+  margin-left:10%;
+  margin-right:10%;
+}
+#favoritos-cabecalho{
+  border-bottom: 1px solid grey;
+  font-family: Arial, sans-serif;
+  font-size: medium;  
+  font-weight: lighter;
+}
+.filme-favorito {
+  /* width | style | color */
+  border-radius:5px;
+  border: 1px solid grey;  
+  width:154px;
+  height:229px;
+}
+#secao-filmes-avaliados {
+  margin-left:10%;
+  margin-right:10%;
+}
+.filme-avaliado {
+  /* width | style | color */
+  border-radius:5px;
+  border: 1px solid grey;  
+  width:154px;
+  height:229px;
+}
+#avaliacoes-cabecalho{
+  color:white;
+  border-bottom: 1px solid grey;
+  font-family: Arial, sans-serif;
+  font-size: medium;  
+  font-weight: lighter;
+}
+#filme-poster-avaliado {
+  float:left;
+}
+#infos-avaliacao{
+  overflow:hidden;
+  max-width: 890px;
+  color:white;
+}
+#titulo-filme-avaliado {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-left:30px;
+}
+#ano-filme-avaliado {
+  font-size: large;
+  margin-left:15px;
+}
+#estrelas-filme-avaliado {
+  font-size: xx-large;
+  margin-left:30px;
+}
+#review-filme-avaliado {
+  display: block;
+  
+  margin-left:30px;
+  font-size: large;
+  
+}

@@ -1,0 +1,156 @@
+.infoPanel {
+    padding-top: 2%;
+    margin-left: 40%;
+    height: 80vh;
+    width: 58%;
+    position: relative;
+    transition: 200ms;
+}
+
+#bgColor {
+    margin-top: -15vh;
+    margin-left: 33%;
+    float: right;
+    position: absolute;
+    width: 67%;
+    height: 120vh;
+    z-index: -1;
+    background-color: black;
+    filter: blur(25px);
+}
+
+#movieImg {
+    position: absolute;
+    margin-left: -20%;
+    z-index: -2;
+    width: auto;
+    height: 80vh;
+    filter: opacity(70%);
+}
+
+#movieTitle {
+    position: relative;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 8vh;
+    z-index: 1;
+    padding: 1vh;
+    border-radius: 2vh;
+    transition: 200ms;
+}
+
+#movieTitle:hover {
+    scale: 104%;
+}
+
+#movieTagline {
+    position: relative;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 2vh;
+    z-index: 1;
+    padding: 1vh;
+    border-radius: 2vh;
+    transition: 200ms;
+}
+
+#movieTagline:hover {
+    scale: 104%;
+}
+
+#duration {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.8vh;
+    padding: 1vh;
+    border-radius: 2vh;
+    padding-top: 4vh;
+    margin-top: -3vh;
+    transition: 200ms;
+}
+
+#duration:hover {
+    scale: 104%;
+}
+
+#description {
+    height: 40%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+    font-size: 2.5vh;
+    text-align: justify;
+    padding: 1vh;
+    border-radius: 2vh;
+    padding-top: 4vh;
+    margin-top: -3vh;
+    transition: 200ms;
+}
+
+#description:hover {
+    scale: 104%;
+}
+
+.movieBtns {
+    position: relative;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: space-evenly;
+    float: left;
+    padding: 1%;
+    width: 30%;
+    height: 10vh;
+    border-radius: 8vh;
+    background-color: #121212;
+}
+
+#gostei {
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-size: 6vh;
+    margin-left: 3vh;
+    margin-top: -0.7vh;
+    height: 7vh;
+    width: 7vh;
+    float: left;
+    transition: 200ms;
+}
+
+#gostei:hover {
+    color: gray;
+    margin-left: 2vh;
+    margin-top: -1.7vh;
+    font-size: 8vh;
+    height: 9vh;
+    width: 9vh;
+    float: left;
+}
+
+#gostei:active {
+    color: black;
+    float: left;
+}
+
+#lista {
+    background-color: transparent;
+    border: 0;
+    float: right;
+    font-size: 6vh;
+    margin-right: 3vh;
+    margin-top: -0.7vh;
+    height: 7vh;
+    width: 7vh;
+    transition: 200ms;
+}
+
+#lista:hover {
+    filter: opacity(80%);
+    margin-right: 2vh;
+    margin-top: -1.7vh;
+    font-size: 8vh;
+    height: 9vh;
+    width: 9vh;
+}
+
+#lista:active {
+    filter: opacity(20%);
+}

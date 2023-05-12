@@ -1,0 +1,81 @@
+#profilePic {
+    width:25%;
+    height:25%;
+    border-radius:50%;
+    cursor:pointer;
+    float: left;
+    margin-right: 3%;
+}
+
+.ReviewInput .ReviewInputText {
+    background-color: #202020;
+    border: 5px solid #202020;
+    -webkit-text-fill-color: aliceblue;
+    border-radius: 12px;
+    height: 30em;
+    inline-size: 100%;
+    overflow-wrap: break-word;
+    text-align: justify;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+}
+
+#ReviewSend {
+    align-self: auto;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+    padding: 2%;
+    border: 1px  solid #afaf60;
+    -webkit-text-fill-color: aliceblue;
+    border-radius: 12px;
+    background-color: #afaf60;
+    float: right;
+    transition: 100ms;
+}
+
+#ReviewSend:hover{
+    border: 1px  solid #b67d32;
+    background-color: #b67d32;
+}
+
+#ReviewSend:active{
+    border: 1px  solid #d13b30;
+    background-color: #d13b30;
+}
+
+.estrelas {
+    display: flex;
+    float: left;
+    margin-left: 70px;
+    margin-top: 2%;
+    scale: 300%;
+}
+
+
+.ReviewWrite {
+    width: 70%;
+    float: right;
+    margin-bottom: 8%;
+}
+
+.body-ReviewPage {
+    padding: 8vh;
+    margin-top: 0;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-image: url(./public/images/backgroundmovies.png);
+    background-size: cover;
+    background-color: #0D0D0D;
+    background-repeat: no-repeat;
+    background-position: -27vw 0vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.reviewWindow {
+    margin-left: 13.5%;
+    margin-right: 13.5%;
+    margin-bottom: 8%;
+}
