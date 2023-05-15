@@ -9,6 +9,7 @@ import Movie from './pages/Movie'
 import Search from './pages/Search'
 import Profile from './pages/TelaDePerfilEditavel'
 import Login from './pages/Login'
+import Register from './pages/Register'
 import ReviewPage from './pages/ReviewPage'
 import NotFound from './pages/NotFound'
 
@@ -17,6 +18,7 @@ import './index.css'
 import './pages/TelaDePerfilEditavel.css'
 import './pages/MoviesGrid.css'
 import './pages/Login.css'
+import './pages/Register.css'
 import './pages/NotFound.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -24,14 +26,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter >
       <Routes>
         <Route element={<App />}>
-          <Route path='/' element={<Home />}/>
+          <Route path='/' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/cadastrar' />
-          <Route path='/login' element={<Login />}/>
-          <Route path='/movie/:id' element={<Movie />}/>
-          <Route path='search' element={<Search />}/>
-          <Route path='/ReviewPage' element={<ReviewPage />}/>
-          <Route path='*' element={<NotFound />}/>
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/movie/:id' element={<Movie />} />
+          <Route path='search' element={<Search />} />
+          <Route path='/ReviewPage' element={<ReviewPage />} />
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

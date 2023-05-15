@@ -23,7 +23,7 @@ const Login = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(error);
-                
+
             });
     }
 
@@ -72,10 +72,10 @@ const Login = () => {
                         <div className="login_footer">
 
                             <div className="sign_up">
-                                <p>Ainda não possui uma conta? <a href="#">Crie uma!</a></p>
+                                <p>Ainda não possui uma conta? <a href="/Register">Crie uma!</a></p>
 
                             </div>
-                        
+
                             <button type='submit' className="submit">
                                 <ol class="googleSubmit">
                                     <div class="googleImg"><i className="fa-brands fa-google"></i></div>
