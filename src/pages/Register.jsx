@@ -17,6 +17,7 @@ const Register = () => {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(`Sucessou! Você é o ${user.email}.\nPor favor, faça login.`);
+                alert(`Sucessou! Você é o ${user.email}.\nPor favor, faça login.`);
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -24,6 +25,7 @@ const Register = () => {
                 console.log(`${errorCode}\n${errorMessage}`);
             });
     }
+
 
     return (
         <>
