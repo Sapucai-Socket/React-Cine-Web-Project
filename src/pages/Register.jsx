@@ -1,6 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase"
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const Register = () => {
+
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const signUp = (e) => {
+        e.preventDefault();
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(`Sucessou! Você é o ${user.email}.\nPor favor, faça login.`);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(`${errorCode}\n${errorMessage}`);
+            });
+    }
+
     return (
         <>
             <body className="body-login">
@@ -18,29 +42,17 @@ const Register = () => {
                     <div className="login_body">
                         <div className="login_box">
                             <h2>Registrar-se</h2>
-                            <form method="post" action="/fazRegistro">
+                            <form onSubmit={signUp}>
                                 <div className="input_box">
                                     <input required type="user" placeholder="Usuário" />
                                 </div>
 
                                 <div className="input_box">
-                                    <input
-                                        required
-                                        type="email"
-                                        id="usuario"
-                                        name="usuario"
-                                        placeholder="E-mail"
-                                    />
+                                    <input required type='email' placeholder='E-mail' value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
 
                                 <div className="input_box">
-                                    <input
-                                        required
-                                        type="password"
-                                        id="senha"
-                                        name="senha"
-                                        placeholder="Senha"
-                                    />
+                                    <input required type='password' placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} />
                                 </div>
 
                                 <div>
