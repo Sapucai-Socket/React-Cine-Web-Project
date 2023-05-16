@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { getAuth, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 
 const auth = getAuth();
 const googleProvider = new GoogleAuthProvider();
 
 function Login() {
+    const [user, setUser] = useState(null)
+
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,10 +18,24 @@ function Login() {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                setUser(loggedUser);
+                navigate('/'); // navigate to the Home page
             })
             .catch(error => {
                 console.log(error)
             });
+    }
+
+    // botão sair
+    const handleSignOut = () => {
+        signOut(auth).then((result) => {
+            // Sign-out successful.
+            console.log(result)
+            setUser(null)
+        }).catch((error) => {
+            // An error happened.
+            console.log(error);
+        });
     }
 
     const signIn = (e) => {

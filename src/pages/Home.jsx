@@ -3,6 +3,8 @@ import Movie from "./Movie";
 import MovieCard from "../components/MovieCard";
 import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
+import Header from "../components/Header"; // make sure to import the Header component
+
 
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -48,9 +50,19 @@ const Home = () => {
 
     return (
         <div className="container">
-            <div style={{textAlign:"center"}} w>{AuthUser ? <><p>{`Signed In as ${AuthUser.email}`}</p><button onClick={userSignOut}>Sign Out</button></> : <p>Signed Out</p>}</div>
-            
-           <div className="wrapper-content">
+            <Header user={AuthUser} />
+            <div style={{ textAlign: "center" }}>
+                {AuthUser ?
+                    <>
+                        <h4>Name: {AuthUser.displayName}</h4>
+                        <p>{`Signed In as ${AuthUser.email}`}</p>
+                        <button onClick={userSignOut}>Sign Out</button>
+                    </>
+                    :
+                    <p>Signed Out</p>
+                }
+            </div>
+            <div className="wrapper-content">
                 <div className="lista">
                     <div className="title">
                         <h2>Populares na Ciné</h2>
@@ -60,9 +72,9 @@ const Home = () => {
                     <div className="movie-container">
                         {topMovies.length === 0 && <p>Carregando...</p>}
                         {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
-                    </div>   
+                    </div>
                 </div>
-           </div>
+            </div>
         </div>
     )
 }

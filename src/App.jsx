@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      {location.pathname !== '/login' && <Header />}
       <Outlet />
       <Footer />
     </div>
