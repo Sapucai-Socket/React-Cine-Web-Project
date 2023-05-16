@@ -1,13 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase"
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 
-const Login = () => {
+const auth = getAuth();
+const googleProvider = new GoogleAuthProvider();
+
+function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const handleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error)
+            });
+    }
 
     const signIn = (e) => {
         e.preventDefault();
@@ -25,6 +38,7 @@ const Login = () => {
                 console.log(error);
 
             });
+
     }
 
     return (
@@ -68,20 +82,20 @@ const Login = () => {
 
                             </div>
                         </div>
+                        <div className="sign_up">
+                            <p>Ainda não possui uma conta? <a href="/Register">Crie uma!</a></p>
+
+                        </div>
 
                         <div className="login_footer">
 
-                            <div className="sign_up">
-                                <p>Ainda não possui uma conta? <a href="/Register">Crie uma!</a></p>
-
-                            </div>
-
-                            <button type='submit' className="submit">
+                            <button onClick={handleSignIn}>
                                 <ol class="googleSubmit">
                                     <div class="googleImg"><i className="fa-brands fa-google"></i></div>
                                     <p>Login através do Google</p>
                                 </ol>
                             </button>
+
                         </div>
                     </div>
                 </div>
