@@ -17,22 +17,22 @@ body {
 .header-list{
     text-align:center;
 }
-.cine-logo {
+.header .cine-logo {
     float: left;
 }
 
-ul, .usuario-nao-cadastrado {
+.header ul, .usuario-nao-cadastrado {
     list-style: none;
     background: #0d0d0d;
     padding: 10px;
       
 }
 
-ul li {
+.header ul li {
     display: inline-block;
     position: relative;
 }
-ul li a {
+.header ul li a {
     background: #557373;
     border-radius: 7px;
     display: inline-block;
@@ -40,7 +40,7 @@ ul li a {
     --largura-dropdown: auto;
 }
 
-ul li a, .header .header-list img  {
+.header ul li a, .header .header-list img  {
     display: inline-block;
     padding: 10px 20px;
     color: #f2efea;
@@ -49,11 +49,11 @@ ul li a, .header .header-list img  {
     font-size: 20px;
     vertical-align: middle; /* alinha os elementos verticalmente */
 }
-ul li ul.dropdown li {
+.header ul li ul.dropdown li {
     display: block;
 }
 
-ul li ul.dropdown {
+.header ul li ul.dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -65,29 +65,29 @@ ul li ul.dropdown {
   border-radius: 7px;
   
 }
-ul li ul.dropdown a {
+.header ul li ul.dropdown a {
   background-color: #202020;
   border: 2px solid #202020;
   width: 100%;
 }
-ul li ul.dropdown a:hover {
+.header ul li ul.dropdown a:hover {
     background-color: #60605f;
   }
 
-ul li a:hover{
+.header ul li a:hover{
     background: #323231;
 }
-ul li:hover ul.dropdown{
+.header ul li:hover ul.dropdown{
     display: block;
     width: auto;
 }
 
 /*barra de busca */
-.box .barra-de-busca {
+.header .box .barra-de-busca {
     background-color: white;
     -webkit-text-fill-color: #557373;
 }
-.box {
+.header .box {
     width: 800px;
     height: auto;
     background-color: white;
@@ -101,14 +101,14 @@ ul li:hover ul.dropdown{
 }
 
 
-.box > i {
+.header .box > i {
     padding: 5px;
     padding-right: 3px;
     font-size: 20px;
     color: #777;
 }
 
-.box > input {
+.header .box > input {
     flex: 1;
     height: 30px;
     border: none;
@@ -117,7 +117,7 @@ ul li:hover ul.dropdown{
     background-color:white;
 }
 
-.usuario-nao-cadastrado {
+.header .usuario-nao-cadastrado {
     float: right;
     border-radius: 50%;
     width: 89px;
