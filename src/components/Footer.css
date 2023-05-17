@@ -30,6 +30,7 @@ footer {
   font-weight: 700;
   font-size: 24px;
   padding: 0 10px 0 0;
+  list-style-type: none;
 }
 .links-footer nav ul li a{
   text-decoration: none;
@@ -59,6 +60,7 @@ footer {
 }
 .redes-sociais ul li{
   padding: 0 15px 0 0;
+  list-style-type: none;
 }
 .img-redes-sociais{
   width: 35px;
