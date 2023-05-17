@@ -23,13 +23,13 @@ const Footer = () => {
                     <div class ="segundo-container-footer">
                         <div class="redes-sociais">
                             <ul>
-                                <li> <a href=""><img class="img-redes-sociais img-ytb" src="images/youtube-icon.png" alt="youtube"></img></a></li>
-                                <li> <a href=""><img class="img-redes-sociais img-github" src="images/github-icon.png"alt="github"></img></a></li>
+                                <li> <a href=""><img class="img-redes-sociais img-ytb" src="public/images/youtube-icon.png" alt="youtube"></img></a></li>
+                                <li> <a href=""><img class="img-redes-sociais img-github" src="public/images/github-icon.png"alt="github"></img></a></li>
                             </ul>
                         </div>
                         <div class="equipe-de-dev">
                             <p>Desenvolvido por</p>
-                            <img class="img-equipe-de-dev" src="images/sapucai-socket-logo.png" alt="sapucai socket"></img>
+                            <img class="img-equipe-de-dev" src="public/images/sapucai-socket-logo.png" alt="sapucai socket"></img>
                         </div>
                     </div>
                 </div>
