@@ -5,6 +5,7 @@ import Carussel from "../components/Carussel";
 import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import Header from "../components/Header"; // make sure to import the Header component
+import '../components/Carussel.css'
 
 
 const moviesURL = import.meta.env.VITE_API;
@@ -55,6 +56,42 @@ const Home = () => {
         }).catch(error => console.log(error))
     }
 
+    const controls = document.querySelectorAll('.control');
+
+    let currentItem = 0;
+    const items = document.querySelectorAll('.item');
+    const maxItems = document.querySelectorAll('.item').length;
+
+    controls.forEach(control => {
+        control.addEventListener('click', () => {
+            const isLeft = control.classList.contains('arrow-left');
+            if (isLeft) {
+                currentItem -= 1;
+            } else {
+                currentItem += 1;
+            }
+
+            if(currentItem >= maxItems) {
+                currentItem = 0;
+            }
+
+            if (currentItem < 0 ) {
+                currentItem = maxItems - 1;
+            }
+            
+            items.forEach(item =>
+                item.classList.remove('current-item'));
+            
+            items[currentItem].scrollIntoView({
+                inline: "center",
+                behavior: 'smooth',
+            });
+
+            items[currentItem].classList.add('current-item');
+        });
+    });
+
+
     return (
         <div className="container">
             <Header user={AuthUser} />
@@ -76,9 +113,15 @@ const Home = () => {
                         <a href="#">Ver Lista</a>
                     </div>
                     <hr></hr>
-                    <div className="movie-container">
-                        {nowPlayingMovies.length === 0 && <p>Carregando...</p>}
-                        {nowPlayingMovies.length > 0 && nowPlayingMovies.map((movie) => <Carussel key={movie.id} movie={movie} />)}
+                    <div className="movie-carrusel-container">
+                        <button className="arrow-left control" aria-label="Previous Image">⭕</button>
+                        <button className="arrow-right control" aria-label="Next Image">⭕</button>
+                        <div className="movie-gallery-wrapper">
+                            <div className="movie-gallery">
+                                {nowPlayingMovies.length === 0 && <p>Carregando...</p>}
+                                {nowPlayingMovies.length > 0 && nowPlayingMovies.map((movie) => <Carussel key={movie.id} movie={movie} />)}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 </div>
