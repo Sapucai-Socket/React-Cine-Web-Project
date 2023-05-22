@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Movie from "./Movie";
 import MovieCard from "../components/MovieCard";
+import Carussel from "../components/Carussel";
 import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import Header from "../components/Header"; // make sure to import the Header component
@@ -11,19 +12,25 @@ const apiKey = import.meta.env.VITE_API_KEY;
 
 const Home = () => {
     const [topMovies, setTopMovies] = useState([]);
+    const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
 
     const getTopRatedMovies = async (url) => {
-
         const res = await fetch(url)
         const data = await res.json()
-
         setTopMovies(data.results)
     }
 
+    const getNowPlayingMovies = async (url) => {
+        const res = await fetch(url)
+        const data = await res.json()
+        setNowPlayingMovies(data.results)
+    }
+
     useEffect(() => {
+        const nowPlayingUrl = `${moviesURL}now_playing?${apiKey}&language=pt-BR`
+        getNowPlayingMovies(nowPlayingUrl)
 
-        const topRatedUrl = `${moviesURL}popular?${apiKey}&language=pt-BR`;
-
+        const topRatedUrl = `${moviesURL}top_rated?${apiKey}&language=pt-BR`;
         getTopRatedMovies(topRatedUrl)
     }, [])
 
@@ -62,6 +69,20 @@ const Home = () => {
                     <p>Signed Out</p>
                 }
             </div>
+            <div className="wrapper-content">
+                <div className="lista">
+                    <div className="title">
+                        <h2>Populares na Ciné</h2>
+                        <a href="#">Ver Lista</a>
+                    </div>
+                    <hr></hr>
+                    <div className="movie-container">
+                        {nowPlayingMovies.length === 0 && <p>Carregando...</p>}
+                        {nowPlayingMovies.length > 0 && nowPlayingMovies.map((movie) => <Carussel key={movie.id} movie={movie} />)}
+                    </div>
+                </div>
+                </div>
+           
             <div className="wrapper-content">
                 <div className="lista">
                     <div className="title">
