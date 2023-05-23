@@ -91,6 +91,42 @@ const Home = () => {
         });
     });
 
+    const controls2 = document.querySelectorAll('.control2');
+
+    let currentItem2 = 0;
+    const items2 = document.querySelectorAll('.item2');
+    const maxItems2 = document.querySelectorAll('.item2').length;
+
+    controls2.forEach(control2 => {
+        control2.addEventListener('click', () => {
+            const isLeft2 = control2.classList.contains('arrow-left2');
+            if (isLeft2) {
+                currentItem2 -= 3;
+            } else {
+                currentItem2 += 3;
+            }
+
+            if(currentItem2 >= maxItems2) {
+                currentItem2 = 0;
+            }
+
+            if (currentItem2 < 0 ) {
+                currentItem2 = maxItems2 - 1;
+            }
+            
+            items2.forEach(item2 =>
+                item2.classList.remove('current-item2'));
+            
+            items2[currentItem2].scrollIntoView({
+                inline: "center",
+                behavior: 'smooth',
+            });
+
+            items2[currentItem2].classList.add('current-item2');
+        });
+    });
+
+
 
     return (
         <div className="container">
@@ -134,8 +170,14 @@ const Home = () => {
                     </div>
                     <hr></hr>
                     <div className="movie-container">
-                        {topMovies.length === 0 && <p>Carregando...</p>}
-                        {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+                        <button className="arrow-left2 control2" aria-label="Previous Image">⭕</button>
+                        <button className="arrow-right2 control2" aria-label="Next Image">⭕</button>
+                        <div className="movie-gallery-general-wrapper">
+                            <div className="movie-gallery-general">
+                                {topMovies.length === 0 && <p>Carregando...</p>}
+                                {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
