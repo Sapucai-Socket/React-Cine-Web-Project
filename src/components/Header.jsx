@@ -1,4 +1,7 @@
 import React from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom"
+
 import './Header.css'
 import { VscTriangleUp } from 'react-icons/vsc'
 import { RiFilmFill } from 'react-icons/ri'
@@ -9,7 +12,20 @@ import { RxMagnifyingGlass } from 'react-icons/rx';
 import { AiFillHome } from 'react-icons/ai'
 
 function Header({ user }) { // accept a user prop
+  const [search, setSearch] = useState("")
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if(!search) return;
+
+    navigate(`/search?q=${search}`)
+    setSearch("")
+}
+
   return (
+
     <div className="header">
       <ul className="header-list">
         <img src="./public/images/cine.png" alt="" className="cine-logo" />
@@ -39,14 +55,17 @@ function Header({ user }) { // accept a user prop
               </a>
             </li>
           </ul>
-          <div className="box">
-            <input
-              className="barra-de-busca"
-              type="text"
-              name="fff"
-              placeholder=" Busque filmes, séries, reviews ou pessoas..."
-            />
-          </div>
+          <form onSubmit={handleSubmit}>
+                        <div className="box">
+                            <input
+                                id="pesquisa"
+                                placeholder="Busque filmes, séries, reviews ou pessoas..."
+                                onChange={(e) => setSearch(e.target.value)}
+                                value={search}
+                            />
+                            <button className="fa fa-search"></button>
+                        </div>
+                    </form>
 
         </li>
         {user ?

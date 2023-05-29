@@ -87,6 +87,9 @@ body {
     background-color: white;
     -webkit-text-fill-color: #557373;
 }
+.header form {
+    display: inline;
+}
 .header .box {
     width: 800px;
     height: auto;
