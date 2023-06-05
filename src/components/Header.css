@@ -91,7 +91,7 @@ body {
     display: inline;
 }
 .header .box {
-    width: 800px;
+    width: 60vw;
     height: auto;
     background-color: white;
     border-radius: 7px;
@@ -124,4 +124,49 @@ body {
     float: right;
     border-radius: 50%;
     width: 89px;
+}
+
+.fa-search {
+    background-color: transparent;
+    border: none;
+    font-size: 150%;
+    width: 20px;
+    height: auto;
+}
+
+@media screen and (max-width: 800px) {
+    #homeBtnHeader {
+        padding: 16px;
+        margin-top: -20%;
+        margin-left: -20%;
+        position: absolute;
+        width: 40vw;    
+    }
+
+    .header .box {
+        width: 90vw;
+        margin: 0 auto;
+        float: none;
+    }
+
+    #pesquisa {
+        font-size: 4vw;
+    }
+
+    .header .usuario-nao-cadastrado {
+        float: right;
+        border-radius: 50%;
+        width: 89px;
+        margin-top: -32%;
+    }
+
+    .header .cine-logo {
+        margin-left: -3%;
+    }
+
+    .dropdown {
+        margin-top: -15%;
+        margin-left: 31.5%;
+        z-index: 999;
+    }
 }

@@ -1,6 +1,6 @@
 .wrapper-content{
     margin: 0 auto;
-    width: 1000px;
+    width: 100vw;
 }
 
 .lista{
@@ -51,10 +51,21 @@
 div.movie-card {
     text-align: center;
     padding: 10px;
-    width: 150px;
+    width: 12vw;
     border-radius: 5px;
     margin: 5px;  
     color: #0d0d0d;
+}
+
+@media screen and (max-width: 800px) {
+    div.movie-card {
+        text-align: center;
+        padding: 10px;
+        width: 30vw;
+        border-radius: 0px;
+        margin: 0;  
+        color: #0d0d0d;
+    }
 }
 
 div.movie-card:hover{

@@ -30,7 +30,7 @@ function Header({ user }) { // accept a user prop
       <ul className="header-list">
         <img src="./public/images/cine.png" alt="" className="cine-logo" />
         <li>
-          <a href="/">
+          <a id="homeBtnHeader">
             <i className="" aria-hidden="true" /><VscTriangleUp /> <AiFillHome /> Home
           </a>
           <ul className="dropdown">
