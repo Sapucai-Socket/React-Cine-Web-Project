@@ -13,9 +13,11 @@ function ProfilePicture() {
   
   function UserInfos() {
     return (
-      <div>
-        <input type="text" placeholder="Clark Kent"/><br/><br/>
-        <input type="text" placeholder="truth, justice and a better tomorrow."/>
+      <div className='userInfos'>
+        <div>
+        <input className='nomePerfil' type="text" placeholder="Clark Kent"/><br/>
+        <input className='descPerfil' type="text" placeholder="truth, justice and a better tomorrow."/>
+        </div>
         <button class="btnEditarPerfil">⚙ SALVAR</button>
       </div>
     );
@@ -93,17 +95,18 @@ function ProfilePicture() {
     return (
       <div id="secao-filmes-avaliados">
         <h2 id="avaliacoes-cabecalho">REVIEWS</h2>
-      
-      <div id="filme-poster-avaliado">
-        <a href="#"><img class="filme-avaliado" src="./public/images/bullettrain.jpg" /></a>
+        <div id='generalInfoReview'>
+          <div id="filme-poster-avaliado">
+            <a href="#"><img class="filme-avaliado" src="./public/images/bullettrain.jpg" /></a>
+          </div>
+          <div id="infos-avaliacao">
+            <span id="titulo-filme-avaliado">Bullet Train</span>
+            <span id="ano-filme-avaliado">2022</span>
+            <span id="estrelas-filme-avaliado">★★</span>
+            <span id="review-filme-avaliado">Filme bem divertido, ótimas cenas de ação. O filme fica meio chatinho em algumas partes, mas é legal de forma geral.</span>
+          </div>
+        </div>
       </div>
-        <div id="infos-avaliacao">
-          <span id="titulo-filme-avaliado">Bullet Train</span>
-          <span id="ano-filme-avaliado">2022</span><br/>
-          <span id="estrelas-filme-avaliado">★★</span><br/>
-          <span id="review-filme-avaliado">Filme bem divertido, ótimas cenas de ação. O filme fica meio chatinho em algumas partes, mas é legal de forma geral.</span>
-        </div>
-        </div>
     );
   }
   

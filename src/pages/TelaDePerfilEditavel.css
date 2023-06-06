@@ -142,6 +142,8 @@ input[type="text"] {
   height:229px;
 }
 #secao-filmes-avaliados {
+  display: flex;
+  flex-direction: column;
   margin-left:10%;
   margin-right:10%;
 }
@@ -163,10 +165,17 @@ input[type="text"] {
   float:left;
 }
 #infos-avaliacao{
+  float: right;
   overflow:hidden;
   max-width: 890px;
   color:white;
 }
+
+#generalInfoReview {
+  display: flex;
+  flex-direction: row;
+}
+
 #titulo-filme-avaliado {
   font-size: xx-large;
   font-weight: bold;
@@ -186,4 +195,84 @@ input[type="text"] {
   margin-left:30px;
   font-size: large;
   
+}
+
+@media screen and (max-width: 800px) {
+  .userInfos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    vertical-align: middle;
+  }
+
+  .btnEditarPerfil {
+    margin-top: 8%;
+    vertical-align: middle;
+    width: 20vw;
+    height: fit-content;
+  }
+
+  .otherUserInfo {
+    font-size: 2.4vw;
+  }
+
+  .container-perfil {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #pfp {
+    float: none;
+    width: 70vw;
+    height: fit-content;
+  }
+
+  .pfpImage {
+    float: right;
+    margin: 0 auto;
+  }
+
+  .nomePerfil {
+    padding: 10px;
+    margin-bottom: 5%;
+    border-radius: 5px;
+  }
+
+  .descPerfil {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .posterUserFavorites {
+    overflow: scroll;
+    scroll-behavior: smooth;
+
+  }
+
+  #secao-filmes-avaliados {
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+  }
+
+  .filme-avaliado {
+    margin-left: 10vw;
+    width: 60vw;
+    height: fit-content;
+  }
+
+  #infos-avaliacao {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #titulo-filme-avaliado, #ano-filme-avaliado, #estrelas-filme-avaliado, #review-filme-avaliado {
+    margin: 0;
+  }
+  
+  #generalInfoReview {
+    flex-direction: column;
+  }
 }
